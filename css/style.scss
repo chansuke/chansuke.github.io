@@ -1,0 +1,169 @@
+@import "toast";
+
+/* import syntax highlighting (Pandoc) */
+// @import "syntax";
+
+/* Color scheme: http://colorschemedesigner.com/#4F11TdODBw0w0 */
+$basecolor: hsl(250, 39, 60);
+$bgcolorin: white; /* lighten($basecolor, 35%); */
+$bgcolorpre: lighten($basecolor, 30%);
+$bgcolorout: darken($basecolor, 50%);
+$fgcolor: black;
+$textcolor: $fgcolor;
+$linkcolor: darken($basecolor, 15%);
+/* End colors */
+
+
+
+/* Start Mixins */
+/* Corner rounding https://gist.github.com/889463 */
+$default_rounded_amount: 5px;
+/* Round corner at position by amount. */
+@mixin round-corner($position, $amount: $default_rounded_amount) {
+    border-#{$position}-radius: $amount;
+    -webkit-border-#{$position}-radius: $amount;
+}
+
+@mixin round-corner-mozilla($position, $amount: $default_rounded_amount) {
+    -moz-border-radius-#{$position}: $amount;
+}
+
+// Round left corners by amount
+@mixin round-some-corners($amount: $default_rounded_amount) {
+    @include round-corner("top-left", $amount);
+    @include round-corner("bottom-right", $amount);
+    @include round-corner-mozilla("topleft", $amount);
+    @include round-corner-mozilla("bottomright", $amount);
+}
+@mixin round-other-corners($amount: $default_rounded_amount) {
+    @include round-corner("top-right", $amount);
+    @include round-corner("bottom-left", $amount);
+    @include round-corner-mozilla("topright", $amount);
+    @include round-corner-mozilla("bottomleft", $amount);
+}
+/* End Mixins */
+
+
+/* Start styles */
+a {
+    &:link {color:$linkcolor;}
+    &:visited {color: darken($linkcolor, 20%);}
+    &:hover {
+        text-decoration: none;
+        background-color: $bgcolorpre;
+    }
+    &:active {color: lighten($linkcolor, 10%);}
+}
+
+.figure {
+    img {
+        max-width: 75%;
+        display: block;
+        margin: 10px auto;
+    }
+    p {
+        text-align: center;
+        font-style: italic;
+    }
+}
+
+h1, h2 {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 0.01em;
+    color: $textcolor;
+    &.post-title {
+        font-size: 40px;
+        font-size: 2rem;
+    }
+}
+
+.grid {
+    background-color: $bgcolorin;
+    #main {
+        margin-top: 30px;
+    }
+}
+
+html, body {
+    color: $textcolor;
+    background-color: $bgcolorout;
+}
+
+div#posts {
+    ul {
+        padding-left: 0px
+    }
+    li.postitem {
+        list-style-type: none;
+        padding: 8px 0px 8px 0px;
+        a {
+            padding: 3px 10px 3px 10px;
+            text-decoration: none;
+        }
+    }
+}
+
+div#head {
+    border-bottom: 4px solid $fgcolor;
+}
+
+div#banner {
+    text-align: center;
+    border: 0px;
+    padding: 20px 0px;
+    margin: 0px;
+    background-color: $bgcolorin;
+    img {
+        max-width: 350px;
+//        height: 234px;
+        background-color: $basecolor;
+        border: 0px;
+    }
+}
+
+div#content {
+    margin: 20px auto;
+    padding: 0px 40px;
+}
+
+div.navigation {
+    margin: 0px 10px;
+    padding: 20px 0px;
+    a {
+        color: $bgcolorin;
+        text-decoration: none;
+        background-color: $fgcolor;
+        font-size: 1.5em; /* 24 / 16 */
+        line-height: 1em; /* 24 / 24 */
+        margin-bottom: 1em; /* 24 / 24 */
+        padding: 3px 10px 3px 10px;
+    }
+    li {
+        list-style-type: none;
+        padding: 12px 0px 12px 0px;
+    }
+    ul {
+        padding: 0px;
+    }
+}
+
+div#nav-left {
+    text-align: right;
+    a {
+        @include round-some-corners(5px);
+    }
+}
+
+div#nav-right {
+    text-align: left;
+    a {
+        @include round-other-corners(5px);
+    }
+}
+
+/* don't let code blocks stretch too far */
+pre {
+    overflow: scroll;
+    background-color: $bgcolorpre;
+    padding: 5px 15px;
+}
