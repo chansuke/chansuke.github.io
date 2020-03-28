@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+html {
+  font-size: 62.5%;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  color: #fff;
+  text-align: center;
+  font-size: 1.4rem;
+  font-family: 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+}
