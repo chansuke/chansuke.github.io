@@ -2,15 +2,91 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <title>chansuke's portofolio</title>
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <title>chansuke</title>
+    <link rel="icon" href="images/chansuke.ico" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <header class="header"></header>
-    <section class="about"></section>
-    <section class="social"></section>
-    <section class="skills"></section>
-    <footer class="footer"></footer>
+    <header class="header">
+      <div class="header-container">
+        <p class="title-sub">Welcome to chansuke's website</p>
+        <h1 class="title-main">Hi, my name is chansuke</h1>
+        <p class="description">bluh bluh bluh</p>
+        <div class="buttons">
+          <a class="button button-showy" href="#about">LEARN MORE</a>
+        </div>
+      </div>
+    </header>
+    <section class="about" id="about">
+      <h2 class="heading">ABOUT ME</h2>
+      <p class="about-text">
+        はじめまして。ちゃんすけと申します。<br />
+        普段は都内でエンジニアとしてWEBやネイティブアプリの開発をしています。<br />
+        OSSにも関心があり、
+      </p>
+      <p class="about-text">
+        関心のある技術:<br />
+        ReactNative、Typescript、CSS、Rust、ブラウザ技術 and more
+      </p>
+    </section>
+    <section class="projects">
+      <h2 class="heading">MY PROJECTS</h2>
+      <div class="projects-wrapper">
+        <div class="project-box">
+          <i class="project-icon fa fa-code"></i>
+          <div class="project-title">GAME</div>
+          <p class="project-text">
+            aaaaaaaaaaaaaaa<br />
+            bbbbbbbbbbbbbbb<br />
+            ccccccccccccccc
+          </p>
+        </div>
+        <div class="project-box">
+          <i class="project-icon fa fa-paint-brush"></i>
+          <div class="project-title">WEB SERVICE</div>
+          <p class="project-text">
+            aaaaaaaaaaaaaaa<br />
+            bbbbbbbbbbbbbbb<br />
+            ccccccccccccccc
+          </p>
+        </div>
+        <div class="project-box">
+          <i class="project-icon fa fa-lightbulb-o"></i>
+          <div class="project-title">APPLICATION</div>
+          <p class="project-text">
+            aaaaaaaaaaaaaaa<br />
+            bbbbbbbbbbbbbbb<br />
+            ccccccccccccccc
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="social">
+      <h2 class="heading">SOCIAL</h2>
+      <div class="social-wrapper">
+        <div class="social-box">
+          <i class="sns-icon fa fa-twitter"></i>
+        </div>
+        <div class="social-box">
+          <i class="sns-icon fa fa-github"></i>
+        </div>
+        <div class="social-box">
+          <i class="sns-icon fa fa-youtube"></i>
+        </div>
+      </div>
+    </section>
+    <section class="contact" id="contact"></section>
+    <footer class="footer">
+      <p>@ chansuke.github.io</p>
+    </footer>
   </body>
 </html>
