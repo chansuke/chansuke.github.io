@@ -178,19 +178,6 @@ body {
   font-size: 4rem;
 }
 
-.heading::before,
-.heading::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border-bottom: 1px solid #999;
-}
-.heading::before {
-  bottom: 5px;
-}
-
 /* --------------------------------
  * about
  * -------------------------------- */
@@ -203,6 +190,63 @@ body {
   margin: 30px 0;
   line-height: 2.5;
 }
+.about-3D-doll {
+  animation: doll 1s linear infinite;
+  -moz-animation: doll 1s linear infinite;
+  -webkit-animation: doll 1s linear infinite;
+  -o-animation: doll 1s linear infinite;
+}
+
+@keyframes doll {
+  0%,
+  100% {
+    transform: rotate(0.5turn);
+  }
+  50% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  25% {
+    transform: skew(30deg, 20deg);
+  }
+  75% {
+    transform: scale(0.6) translate(-10%, -10%);
+  }
+}
+
+.rainbow_text_animated {
+  background: linear-gradient(
+    to right,
+    #6666ff,
+    #0099ff,
+    #00ff00,
+    #ff3399,
+    #6666ff
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow-animation 6s ease-in-out infinite;
+  background-size: 400% 100%;
+}
+
+@keyframes rainbow-animation {
+  0%,
+  100% {
+    background-position: 0 0;
+  }
+
+  75% {
+    background-position: 25% 0;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
+
+  25% {
+    background-position: 75% 0;
+  }
+}
 
 /* --------------------------------
  * projects
@@ -211,6 +255,16 @@ body {
   padding: 80px 0;
   background: url('../images/aboutmebg.png') no-repeat fixed left bottom;
   background-color: #383634;
+}
+.project-title-component {
+  display: flex;
+  justify-content: center;
+}
+.dark-parker-doll {
+  animation: darkparker 3s linear infinite;
+  -moz-animation: darkparker 3s linear infinite;
+  -webkit-animation: darkparker 3s linear infinite;
+  -o-animation: darkparker 3s linear infinite;
 }
 .projects-wrapper {
   display: table;
@@ -239,6 +293,21 @@ body {
 .project-text {
   margin: 0 20px;
   line-height: 2;
+}
+
+@keyframes darkparker {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  60% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(-50px);
+  }
 }
 
 /* --------------------------------
