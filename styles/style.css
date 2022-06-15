@@ -388,19 +388,22 @@ body {
  * social
  * -------------------------------- */
 .social {
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #333;
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  /* color: #333; */
 }
 .social-wrapper {
   margin: 50px auto 0;
+  text-align: center;
 }
 
 .social-box {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0;/
   background-color: #23395d;
   color: #93a1a1;
+  display: inline-block;
+  text-align: left;
 }
 
 .social-box li a {
